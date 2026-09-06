@@ -52,7 +52,7 @@ on:
 env:
   # The one variable that separates the arms: on baseline, action-checkout
   # skips its Set up Chalk step entirely.
-  CHALK_ON: ${{ github.event_name == 'workflow_dispatch' && inputs.leg != 'baseline' }}
+  CHALK_ON: ${{ inputs.leg == 'instrumented' }}
   CACHE_VERSION: 4
   MYPY_CACHE_VERSION: 1
   HA_SHORT_VERSION: "2026.10"
@@ -610,7 +610,7 @@ jobs:
     # Only run on push to the dev branch; this job reaches out to endoflife.date, and
     # we do not want a new MariaDB/MySQL release to fail CI on PR runs or the rc/master
     # branches.
-    if: github.event_name == 'push' && github.ref == 'refs/heads/dev'
+    if: ${{ 'push' == 'push' && github.ref == 'refs/heads/dev' }}
     steps:
       - name: Check out code from GitHub
         uses: crashappsec/action-checkout@main
@@ -649,7 +649,7 @@ jobs:
       github.event.inputs.pylint-only != 'true'
       && github.event.inputs.mypy-only != 'true'
       && needs.info.outputs.requirements == 'true'
-      && github.event_name == 'pull_request'
+      && 'push' == 'pull_request'
     steps:
       - name: Check out code from GitHub
         uses: crashappsec/action-checkout@main
@@ -1810,7 +1810,7 @@ jobs:
     # codecov/test-results-action currently doesn't support tokenless uploads
     # therefore we can't run it on forks
     if: |
-      (github.event_name != 'pull_request' || !github.event.pull_request.head.repo.fork)
+      ('push' != 'pull_request' || !github.event.pull_request.head.repo.fork)
       && needs.info.outputs.skip_coverage != 'true' && !cancelled()
     steps:
       - name: Download all coverage artifacts
