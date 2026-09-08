@@ -134,7 +134,7 @@ jobs:
       skip_coverage: ${{ steps.info.outputs.skip_coverage }}
     steps:
       - name: Check out code from GitHub
-        uses: crashappsec/action-checkout@main
+        uses: crashappsec/action-checkout@e9ff46a65f6403d9d88b87d248c3dfa41550ec75
         with:
           chalk: ${{ env.CHALK_ON }}
           profile: ${{ inputs.profile || 'curiosity-tests-racecar' }}
@@ -321,7 +321,7 @@ jobs:
       && github.event.inputs.audit-licenses-only != 'true'
     steps:
       - name: Check out code from GitHub
-        uses: crashappsec/action-checkout@main
+        uses: crashappsec/action-checkout@e9ff46a65f6403d9d88b87d248c3dfa41550ec75
         with:
           chalk: ${{ env.CHALK_ON }}
           profile: ${{ inputs.profile || 'curiosity-tests-racecar' }}
@@ -359,7 +359,7 @@ jobs:
       && github.event.inputs.audit-licenses-only != 'true'
     steps:
       - name: Check out code from GitHub
-        uses: crashappsec/action-checkout@main
+        uses: crashappsec/action-checkout@e9ff46a65f6403d9d88b87d248c3dfa41550ec75
         with:
           chalk: ${{ env.CHALK_ON }}
           profile: ${{ inputs.profile || 'curiosity-tests-racecar' }}
@@ -397,7 +397,7 @@ jobs:
           - script/hassfest/docker/Dockerfile
     steps:
       - name: Check out code from GitHub
-        uses: crashappsec/action-checkout@main
+        uses: crashappsec/action-checkout@e9ff46a65f6403d9d88b87d248c3dfa41550ec75
         with:
           chalk: ${{ env.CHALK_ON }}
           profile: ${{ inputs.profile || 'curiosity-tests-racecar' }}
@@ -432,7 +432,7 @@ jobs:
         python-version: ${{ fromJson(needs.info.outputs.python_versions) }}
     steps:
       - name: Check out code from GitHub
-        uses: crashappsec/action-checkout@main
+        uses: crashappsec/action-checkout@e9ff46a65f6403d9d88b87d248c3dfa41550ec75
         with:
           chalk: ${{ env.CHALK_ON }}
           profile: ${{ inputs.profile || 'curiosity-tests-racecar' }}
@@ -487,7 +487,7 @@ jobs:
       && github.event.inputs.audit-licenses-only != 'true'
     steps:
       - name: Check out code from GitHub
-        uses: crashappsec/action-checkout@main
+        uses: crashappsec/action-checkout@e9ff46a65f6403d9d88b87d248c3dfa41550ec75
         with:
           chalk: ${{ env.CHALK_ON }}
           profile: ${{ inputs.profile || 'curiosity-tests-racecar' }}
@@ -535,7 +535,7 @@ jobs:
       && github.event.inputs.audit-licenses-only != 'true'
     steps:
       - name: Check out code from GitHub
-        uses: crashappsec/action-checkout@main
+        uses: crashappsec/action-checkout@e9ff46a65f6403d9d88b87d248c3dfa41550ec75
         with:
           chalk: ${{ env.CHALK_ON }}
           profile: ${{ inputs.profile || 'curiosity-tests-racecar' }}
@@ -576,7 +576,7 @@ jobs:
       && github.event.inputs.audit-licenses-only != 'true'
     steps:
       - name: Check out code from GitHub
-        uses: crashappsec/action-checkout@main
+        uses: crashappsec/action-checkout@e9ff46a65f6403d9d88b87d248c3dfa41550ec75
         with:
           chalk: ${{ env.CHALK_ON }}
           profile: ${{ inputs.profile || 'curiosity-tests-racecar' }}
@@ -613,7 +613,7 @@ jobs:
     if: ${{ 'push' == 'push' && github.ref == 'refs/heads/dev' }}
     steps:
       - name: Check out code from GitHub
-        uses: crashappsec/action-checkout@main
+        uses: crashappsec/action-checkout@e9ff46a65f6403d9d88b87d248c3dfa41550ec75
         with:
           chalk: ${{ env.CHALK_ON }}
           profile: ${{ inputs.profile || 'curiosity-tests-racecar' }}
@@ -652,7 +652,7 @@ jobs:
       && 'push' == 'pull_request'
     steps:
       - name: Check out code from GitHub
-        uses: crashappsec/action-checkout@main
+        uses: crashappsec/action-checkout@e9ff46a65f6403d9d88b87d248c3dfa41550ec75
         with:
           chalk: ${{ env.CHALK_ON }}
           profile: ${{ inputs.profile || 'curiosity-tests-racecar' }}
@@ -690,7 +690,7 @@ jobs:
         python-version: ${{ fromJson(needs.info.outputs.python_versions) }}
     steps:
       - name: Check out code from GitHub
-        uses: crashappsec/action-checkout@main
+        uses: crashappsec/action-checkout@e9ff46a65f6403d9d88b87d248c3dfa41550ec75
         with:
           chalk: ${{ env.CHALK_ON }}
           profile: ${{ inputs.profile || 'curiosity-tests-racecar' }}
@@ -746,7 +746,7 @@ jobs:
       || github.event.inputs.pylint-only == 'true'
     steps:
       - name: Check out code from GitHub
-        uses: crashappsec/action-checkout@main
+        uses: crashappsec/action-checkout@e9ff46a65f6403d9d88b87d248c3dfa41550ec75
         with:
           chalk: ${{ env.CHALK_ON }}
           profile: ${{ inputs.profile || 'curiosity-tests-racecar' }}
@@ -804,7 +804,7 @@ jobs:
       && (needs.info.outputs.tests_glob || needs.info.outputs.test_full_suite == 'true')
     steps:
       - name: Check out code from GitHub
-        uses: crashappsec/action-checkout@main
+        uses: crashappsec/action-checkout@e9ff46a65f6403d9d88b87d248c3dfa41550ec75
         with:
           chalk: ${{ env.CHALK_ON }}
           profile: ${{ inputs.profile || 'curiosity-tests-racecar' }}
@@ -860,7 +860,7 @@ jobs:
       || github.event.inputs.mypy-only == 'true'
     steps:
       - name: Check out code from GitHub
-        uses: crashappsec/action-checkout@main
+        uses: crashappsec/action-checkout@e9ff46a65f6403d9d88b87d248c3dfa41550ec75
         with:
           chalk: ${{ env.CHALK_ON }}
           profile: ${{ inputs.profile || 'curiosity-tests-racecar' }}
@@ -932,7 +932,7 @@ jobs:
       - base
     steps:
       - name: Check out code from GitHub
-        uses: crashappsec/action-checkout@main
+        uses: crashappsec/action-checkout@e9ff46a65f6403d9d88b87d248c3dfa41550ec75
         with:
           chalk: ${{ env.CHALK_ON }}
           profile: ${{ inputs.profile || 'curiosity-tests-racecar' }}
@@ -1038,7 +1038,7 @@ jobs:
         group: ${{ fromJson(needs.info.outputs.test_groups) }}
     steps:
       - name: Check out code from GitHub
-        uses: crashappsec/action-checkout@main
+        uses: crashappsec/action-checkout@e9ff46a65f6403d9d88b87d248c3dfa41550ec75
         with:
           chalk: ${{ env.CHALK_ON }}
           profile: ${{ inputs.profile || 'curiosity-tests-racecar' }}
@@ -1182,7 +1182,7 @@ jobs:
         mariadb-group: ${{ fromJson(needs.info.outputs.mariadb_groups) }}
     steps:
       - name: Check out code from GitHub
-        uses: crashappsec/action-checkout@main
+        uses: crashappsec/action-checkout@e9ff46a65f6403d9d88b87d248c3dfa41550ec75
         with:
           chalk: ${{ env.CHALK_ON }}
           profile: ${{ inputs.profile || 'curiosity-tests-racecar' }}
@@ -1334,7 +1334,7 @@ jobs:
         postgresql-group: ${{ fromJson(needs.info.outputs.postgresql_groups) }}
     steps:
       - name: Check out code from GitHub
-        uses: crashappsec/action-checkout@main
+        uses: crashappsec/action-checkout@e9ff46a65f6403d9d88b87d248c3dfa41550ec75
         with:
           chalk: ${{ env.CHALK_ON }}
           profile: ${{ inputs.profile || 'curiosity-tests-racecar' }}
@@ -1479,7 +1479,7 @@ jobs:
         sqlite-group: ${{ fromJson(needs.info.outputs.sqlite_groups) }}
     steps:
       - name: Check out code from GitHub
-        uses: crashappsec/action-checkout@main
+        uses: crashappsec/action-checkout@e9ff46a65f6403d9d88b87d248c3dfa41550ec75
         with:
           chalk: ${{ env.CHALK_ON }}
           profile: ${{ inputs.profile || 'curiosity-tests-racecar' }}
@@ -1595,7 +1595,7 @@ jobs:
     if: needs.info.outputs.skip_coverage != 'true'
     steps:
       - name: Check out code from GitHub
-        uses: crashappsec/action-checkout@main
+        uses: crashappsec/action-checkout@e9ff46a65f6403d9d88b87d248c3dfa41550ec75
         with:
           chalk: ${{ env.CHALK_ON }}
           profile: ${{ inputs.profile || 'curiosity-tests-racecar' }}
@@ -1644,7 +1644,7 @@ jobs:
         group: ${{ fromJson(needs.info.outputs.test_groups) }}
     steps:
       - name: Check out code from GitHub
-        uses: crashappsec/action-checkout@main
+        uses: crashappsec/action-checkout@e9ff46a65f6403d9d88b87d248c3dfa41550ec75
         with:
           chalk: ${{ env.CHALK_ON }}
           profile: ${{ inputs.profile || 'curiosity-tests-racecar' }}
@@ -1770,7 +1770,7 @@ jobs:
       - pytest-partial
     steps:
       - name: Check out code from GitHub
-        uses: crashappsec/action-checkout@main
+        uses: crashappsec/action-checkout@e9ff46a65f6403d9d88b87d248c3dfa41550ec75
         with:
           chalk: ${{ env.CHALK_ON }}
           profile: ${{ inputs.profile || 'curiosity-tests-racecar' }}
